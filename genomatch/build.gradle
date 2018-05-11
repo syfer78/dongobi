@@ -1,0 +1,21 @@
+apply plugin : 'java'
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    mavenCentral();
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'me.genomatch.Main'
+    }
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-server
+    compile group: 'org.eclipse.jetty', name: 'jetty-server', version: '9.2.23.v20171218'
+    compile group: 'org.eclipse.jetty', name: 'jetty-client', version: '9.2.23.v20171218'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+    compile 'junit:junit:4.12'
+}
